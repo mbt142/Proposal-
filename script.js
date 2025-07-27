@@ -1,23 +1,18 @@
-const yesBtn = document.getElementById("yesBtn");
-const noBtn = document.getElementById("noBtn");
+const noBtn = document.getElementById('noBtn');
+const yesBtn = document.getElementById('yesBtn');
 
-// Make the No button run away!
-noBtn.addEventListener("mouseover", () => {
-  const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
-  const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
-  noBtn.style.position = "absolute";
-  noBtn.style.left = `${x}px`;
-  noBtn.style.top = `${y}px`;
+noBtn.addEventListener('mouseover', () => {
+  const i = Math.floor(Math.random() * 300);
+  const j = Math.floor(Math.random() * 300);
+  noBtn.style.position = 'absolute';
+  noBtn.style.top = `${i}px`;
+  noBtn.style.left = `${j}px`;
 });
 
-// Show final message on Yes
-yesBtn.addEventListener("click", () => {
-  document.body.innerHTML = `
-    <div class="stars"></div>
-    <div style="text-align: center; margin-top: 20vh; font-family: 'Orbitron'; color: #00ffff;">
-      <h1>💍 You said YES! 💙</h1>
-      <p>Welcome to our anime love story.</p>
-      <img src="https://media.tenor.com/nXavly-hHvcAAAAC/gojo-satoru.gif" width="250" />
-    </div>
+yesBtn.addEventListener('click', () => {
+  document.querySelector('.container').innerHTML = `
+    <h1>💍 Yes! I Love You Too 💖</h1>
+    <img src="https://media.tenor.com/qQwFcVmIbY0AAAAC/gojo-hug.gif" alt="hug" width="300" style="border-radius: 16px; margin-top: 20px;"/>
+    <p style="margin-top: 20px; font-size: 1.2em;">Your forever — MBT 🌌</p>
   `;
 });
